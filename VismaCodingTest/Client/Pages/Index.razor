@@ -1,11 +1,14 @@
 ﻿@page "/"
 @inject HttpClient Http
 
+<div class="mb-4 text-center">
 <h2>Kunder med rabatt</h2>
-    <div>
+    
     <CustomerList  />
+    
+
     </div>
-<h2>Produkter med standard priser</h2>
+<h2 class="mb-4 text-center">Produkter med standard priser</h2>
 
 @if(ProductList.Count == 0)
 {
@@ -13,15 +16,23 @@
 }
 else
 {
+    <div class="row row-cols-1 row-cols-md-2 g-4">
     @foreach(var product in ProductList)
     {
-        <div>
-            <p>Produktnamn: @product.ProductName</p>
-            <p>Beskrivning: @product.Description</p>
-            <p>Standard Pris: @product.StandardPrice SEK</p>
-            
-        </div>
+
+  <div class="col">
+    <div class="card h-50 w-75">
+      <img src="@product.ImageUrl" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">@product.ProductName</h5>
+        <p class="card-text">@product.Description</p>
+        <h5 class="card-text text-center">Standard Pris: @product.StandardPrice SEK</h5>
+      </div>
+    </div>
+  </div>
+  
     }
+    </div>
 }
 
 
