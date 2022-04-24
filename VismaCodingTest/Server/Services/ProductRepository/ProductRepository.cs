@@ -10,6 +10,7 @@ namespace VismaCodingTest.Server.Services.ProductRepository
             {
                 Id = 1,
                 ProductName = "Capella",
+                ImageUrl = "https://www.kinnarps.se/contentassets/5237728cbaa6488788c63228aa3290d7/capella-cf121-w-id281_0001.jpg",
                 Category = new Category()
                 {
                    Id = 1,
@@ -23,6 +24,7 @@ namespace VismaCodingTest.Server.Services.ProductRepository
             {
                 Id = 2,
                 ProductName = "Claro",
+                ImageUrl = "https://www.kinnarps.se/contentassets/5dcae2bf72204fef934f6debeadf0489/claro_-1.jpg?preset=product-imageLg1x",
                 Category = new Category()
                 {
                     Id = 1,
@@ -36,6 +38,7 @@ namespace VismaCodingTest.Server.Services.ProductRepository
             {
                 Id = 3,
                 ProductName = "Oberon Skrivbord",
+                ImageUrl = "https://www.kinnarps.se/globalassets/images/product-images/oberon-gen-2/oberon-desk/product-images/19395.jpg",
                 Category = new Category()
                 {
                     Id = 2,
@@ -49,6 +52,7 @@ namespace VismaCodingTest.Server.Services.ProductRepository
             {
                 Id = 4,
                 ProductName = "Serie[P]",
+                ImageUrl = "https://www.kinnarps.se/contentassets/696447fd4eaf4f7cb5e449809fed6ab0/kin-product-seriep-p148ssp6pt2t51t51pd1t51pd2-19702.jpg?preset=product-imageLg1x",
                 Category= new Category()
                 {
                     Id = 2,
