@@ -1,13 +1,13 @@
 ﻿@page "/customer/{CustomerId:guid}"
 @inject HttpClient Http
 
-<h3>This is the products with adjusted prices for @SelectedCustomer.CompanyName</h3>
+<h3>Produkter med justerade priser för @SelectedCustomer.CompanyName</h3> 
 
 @foreach(var product in ProductList)
 {
-    <p>Product: @product.Title</p>
-    <p>Standard Price: @product.StandardPrice</p>
-    <p>Adjusted Price: @product.AdjustedPrice</p>
+    <p>Produkt: @product.ProductName</p>
+    <p>Standard Pris: @product.StandardPrice</p>
+    <p>Justerat Pris: @product.AdjustedPrice</p>
 }
 
 
@@ -24,7 +24,7 @@
     {
         SelectedCustomer = await Http.GetFromJsonAsync<VismaCodingTest.Shared.Customer>($"api/customer/{CustomerId}");
 
-        ProductList = await Http.GetFromJsonAsync <List<Product>>("api/product");
+        ProductList = await Http.GetFromJsonAsync <List<Product>>($"api/product");
     }
 
 }
