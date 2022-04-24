@@ -1,9 +1,45 @@
 ﻿@page "/"
+@inject HttpClient Http
 
-<PageTitle>Index</PageTitle>
+<h2>Customers with rebate</h2>
+    <div>
+    <CustomerList  />
+    </div>
+<h2>Products with standard prices</h2>
 
-<h1>Hello, world!</h1>
+@if(ProductList == null)
+{
+    <p>@message</p>
+}
+else
+{
+    @foreach(var product in ProductList)
+    {
+        <div>
+            <p>Title: @product.Title</p>
+            <p>Description: @product.Description</p>
+            <p>Standard Price: @product.StandardPrice</p>
+            
+        </div>
+    }
+}
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+    public VismaCodingTest.Shared.Customer Customer { get; set; } = new VismaCodingTest.Shared.Customer();
+    public List<Product> ProductList { get; set; } = new List<Product>();
+    private string message = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+       
+
+        ProductList = await Http.GetFromJsonAsync<List<Product>>("api/product");
+        if(ProductList.Count == 0)
+        {
+            message = "Loading...";
+        }
+
+
+    }
+}

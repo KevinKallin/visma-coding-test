@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.ResponseCompression;
+using VismaCodingTest.Server.Services.CustomerService;
+using VismaCodingTest.Server.Services.ProductRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
