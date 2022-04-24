@@ -1,0 +1,30 @@
+﻿@page "/customer/{CustomerId:guid}"
+@inject HttpClient Http
+
+<h3>This is the products with adjusted prices for @SelectedCustomer.CompanyName</h3>
+
+@foreach(var product in ProductList)
+{
+    <p>Product: @product.Title</p>
+    <p>Standard Price: @product.StandardPrice</p>
+    <p>Adjusted Price: @product.AdjustedPrice</p>
+}
+
+
+@code {
+    [Parameter]
+    public Guid CustomerId { get; set; }
+
+    public List<Product> ProductList { get; set; } = new List<Product>();
+    public decimal savingAmount = 0.00m;
+
+    public VismaCodingTest.Shared.Customer SelectedCustomer { get; set; } = new VismaCodingTest.Shared.Customer();
+
+    protected override async Task OnInitializedAsync()
+    {
+        SelectedCustomer = await Http.GetFromJsonAsync<VismaCodingTest.Shared.Customer>($"api/customer/{CustomerId}");
+
+        ProductList = await Http.GetFromJsonAsync <List<Product>>("api/product");
+    }
+
+}

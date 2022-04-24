@@ -1,0 +1,43 @@
+﻿@inject HttpClient Http
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Contact Person</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Postal Code</th>
+        <th>Country</th>
+        <th>Email</th>
+        <th>Phone</th>
+    </tr>
+    </thead>
+    @foreach(var customer in CustomersWithRebate)
+    {
+    <tbody>
+    <tr>
+        <td><a href="customer/@customer.CustomerId">@customer.CompanyName</a></td>
+        <td>@customer.ContactName</td>
+        <td>@customer.Address</td>
+        <td>@customer.City</td>
+        <td>@customer.PostalCode</td>
+        <td>@customer.Country</td>
+        <td>@customer.Email</td>
+        <td>@customer.Phone</td>
+    </tr>
+    </tbody>
+    }
+
+</table>
+@code {
+    [Parameter]
+    public List<Customer> CustomersWithRebate { get; set; } = new List<Customer>();
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        CustomersWithRebate = await Http.GetFromJsonAsync<List<VismaCodingTest.Shared.Customer>>("api/customer");
+        
+    }
+}
