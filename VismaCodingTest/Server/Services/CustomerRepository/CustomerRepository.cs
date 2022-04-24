@@ -10,14 +10,14 @@ namespace VismaCodingTest.Server.Services.CustomerService
             {
                 Id = 1,
                 CustomerId = Guid.NewGuid(),
-                CompanyName = "Company Name 1",
+                CompanyName = "Polismyndigheten",
                 ContactName = "John Doe",
-                Address = "Testgatan 1",
+                Address = "Lagerbergsgatan 35",
                 City = "Uddevalla",
-                PostalCode = "45150",
+                PostalCode = "45132",
                 Country = "Sverige",
                 Phone = "+46701111111",
-                Email = "company_name1@hotmail.com",
+                Email = "john.doe@polisen.se",
                 HasRebate = false
             },
 
@@ -25,14 +25,14 @@ namespace VismaCodingTest.Server.Services.CustomerService
             {
                 Id = 2,
                 CustomerId = Guid.Parse("75068fb8-7550-4906-aa97-4e20c2005b0f"),
-                CompanyName = "Company Name 2",
+                CompanyName = "Visma",
                 ContactName = "Jane Doe",
-                Address = "Testgatan 25",
-                City = "Uddevalla",
-                PostalCode = "45150",
+                Address = "Tradenvägen 18",
+                City = "Munkedal",
+                PostalCode = "45591",
                 Country = "Sverige",
                 Phone = "+46702222222",
-                Email = "company_name2@hotmail.com",
+                Email = "jane.doe@visma.com",
                 HasRebate = true
             },
 
@@ -40,14 +40,14 @@ namespace VismaCodingTest.Server.Services.CustomerService
             {
                 Id = 3,
                 CustomerId = Guid.Parse("e1f19d09-ab9e-4d65-8592-25fc7a6c17ca"),
-                CompanyName = "Company Name 3",
-                ContactName = "Doe Jane",
-                Address = "Testgatan 8C",
+                CompanyName = "Swedbank",
+                ContactName = "Signe Sullysson",
+                Address = "Kilbäcksgatan 13",
                 City = "Uddevalla",
-                PostalCode = "45150",
+                PostalCode = "45130",
                 Country = "Sverige",
                 Phone = "+46703333333",
-                Email = "company_name3@hotmail.com",
+                Email = "signe.sullysson@swedbank.se",
                 HasRebate = true
             },
         };
