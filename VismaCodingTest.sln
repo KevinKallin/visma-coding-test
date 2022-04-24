@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VismaCodingTest.Server", "VismaCodingTest\Server\VismaCodingTest.Server.csproj", "{1F29C514-097F-4A66-9FEA-50362D317F04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VismaCodingTest.Server", "VismaCodingTest\Server\VismaCodingTest.Server.csproj", "{1F29C514-097F-4A66-9FEA-50362D317F04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VismaCodingTest.Client", "VismaCodingTest\Client\VismaCodingTest.Client.csproj", "{301BC8AB-65AC-491C-A730-B9E6127989B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VismaCodingTest.Client", "VismaCodingTest\Client\VismaCodingTest.Client.csproj", "{301BC8AB-65AC-491C-A730-B9E6127989B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VismaCodingTest.Shared", "VismaCodingTest\Shared\VismaCodingTest.Shared.csproj", "{3424513B-C26B-4B6A-A30C-213FACA714B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VismaCodingTest.Shared", "VismaCodingTest\Shared\VismaCodingTest.Shared.csproj", "{3424513B-C26B-4B6A-A30C-213FACA714B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

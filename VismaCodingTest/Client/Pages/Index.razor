@@ -1,13 +1,13 @@
 ﻿@page "/"
 @inject HttpClient Http
 
-<h2>Customers with rebate</h2>
+<h2>Kunder med rabatt</h2>
     <div>
     <CustomerList  />
     </div>
-<h2>Products with standard prices</h2>
+<h2>Produkter med standard priser</h2>
 
-@if(ProductList == null)
+@if(ProductList.Count == 0)
 {
     <p>@message</p>
 }
@@ -16,9 +16,9 @@ else
     @foreach(var product in ProductList)
     {
         <div>
-            <p>Title: @product.Title</p>
-            <p>Description: @product.Description</p>
-            <p>Standard Price: @product.StandardPrice</p>
+            <p>Produktnamn: @product.ProductName</p>
+            <p>Beskrivning: @product.Description</p>
+            <p>Standard Pris: @product.StandardPrice SEK</p>
             
         </div>
     }
@@ -32,14 +32,10 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-       
-
         ProductList = await Http.GetFromJsonAsync<List<Product>>("api/product");
         if(ProductList.Count == 0)
         {
-            message = "Loading...";
+            message = "Det finns inga produkter";
         }
-
-
     }
 }
